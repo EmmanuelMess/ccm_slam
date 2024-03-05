@@ -1,0 +1,28 @@
+version: "3.9"
+services:
+  roscore:
+    image: ccm_slam
+    command: /bin/bash -c "source ${CATKIN_WS}/devel/setup.bash; roscore"
+    network_mode: "host"
+    volumes:
+      - ${PROJECT_SOURCE}:${CATKIN_WS}/src/ccm_slam
+      - ${PROJECT_ROOT}/build:${CATKIN_WS}/build
+      - ${PROJECT_ROOT}/devel:${CATKIN_WS}/devel
+      - ${PROJECT_ROOT}/install:${CATKIN_WS}/install
+      - ${PROJECT_ROOT}/logs:${CATKIN_WS}/logs
+    environment:
+      ROS_MASTER_URI: ${ROS_MASTER_URI}
+  ccm_slam_server:
+    image: ccm_slam
+    depends_on:
+      - roscore
+    command: /bin/bash -c "source ${CATKIN_WS}/devel/setup.bash; roslaunch --wait ccmslam Server.launch"
+    network_mode: "host"
+    volumes:
+      - ${PROJECT_SOURCE}:${CATKIN_WS}/src/ccm_slam
+      - ${PROJECT_ROOT}/build:${CATKIN_WS}/build
+      - ${PROJECT_ROOT}/devel:${CATKIN_WS}/devel
+      - ${PROJECT_ROOT}/install:${CATKIN_WS}/install
+      - ${PROJECT_ROOT}/logs:${CATKIN_WS}/logs
+    environment:
+      ROS_MASTER_URI: ${ROS_MASTER_URI}
