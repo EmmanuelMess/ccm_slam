@@ -2,7 +2,7 @@ version: "3.9"
 services:
   client:
     image: ccm_slam
-    command: /bin/bash -c "source ${CATKIN_WS}/devel/setup.bash; roslaunch ccmslam Client${AGENT_NUM}_euroc.launch"
+    command: /bin/bash -c "source ${CATKIN_WS}/devel/setup.bash; roslaunch ccmslam Client${AGENT_NUM}.launch"
     network_mode: "host"
     volumes:
       - ${PROJECT_SOURCE}:${CATKIN_WS}/src/ccm_slam
