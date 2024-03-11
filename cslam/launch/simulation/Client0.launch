@@ -16,7 +16,7 @@
   <param name="~FrameId" type="string" value="odomC0" />
   <param name="~ClientId" type="int" value="0" />
 
-  <param name="~TopicNameCamSub" type="string" value="/cam0/image_raw" />
+  <param name="~TopicNameCamSub" type="string" value="/cam0/image_raw0" />
 
   <param name="~MapInTopicName" type="string" value="MapOutServer0" unless="$(arg dist)" />
   <param name="~MapInTopicName" type="string" value="MapOutServer0Disturbed" if="$(arg dist)" /> 
