@@ -14,14 +14,15 @@
   <node pkg="tf" type="static_transform_publisher" name="linkS1_broadcaster" args="0 0 5 -1.571 0 -2 world odomS1 100" />
   <node pkg="tf" type="static_transform_publisher" name="linkS2_broadcaster" args="0 0 5 -1.571 0 -2 world odomS2 100" />
   <node pkg="tf" type="static_transform_publisher" name="linkS3_broadcaster" args="0 0 5 -1.571 0 -2 world odomS3 100" />
-
+  <node pkg="tf" type="static_transform_publisher" name="linkS4_broadcaster" args="0 0 5 -1.571 0 -2 world odomS4 100" />
+  
 <node pkg="ccmslam" type="ccmslamServerNode" name="ccmslamServerNode" args="$(find ccmslam)/conf/ORBvoc.txt" output="screen">
 
   <!-- +++++++++++++++++++++++++++++++++++++++++++++ -->
   <!-- !!! ADJUST INPUT TOPIC NAMES IF NECESSARY !!! -->
   <!-- +++++++++++++++++++++++++++++++++++++++++++++ -->
 
-  <param name="NumOfClients" type="int" value="4" />
+  <param name="NumOfClients" type="int" value="5" />
 
   <param name="LoadMap" type="bool" value="false" />
 
@@ -48,6 +49,12 @@
   <param name="FrameId3" type="string" value="odomS3" />
   <param name="~MapInTopicName3" type="string" value="MapOutClient3" unless="$(arg dist)" />
   <param name="~MapInTopicName3" type="string" value="MapOutClient3Disturbed" if="$(arg dist)" />
+
+  <!-- Client 4 -->
+
+  <param name="FrameId4" type="string" value="odomS4" />
+  <param name="~MapInTopicName4" type="string" value="MapOutClient4" unless="$(arg dist)" />
+  <param name="~MapInTopicName4" type="string" value="MapOutClient4Disturbed" if="$(arg dist)" />
 
 </node>
 

@@ -2,9 +2,9 @@ version: "3.9"
 services:
   data:
     image: ccm_slam
-    command: /bin/bash -c "python3 main.py ${AGENT_NUM} ${CATKIN_WS}/dataset"
+    command: /bin/bash -c "rosbag play ./bag.bag /device_0/sensor_1/Color_0/image/data:=/cam0/image_raw${AGENT_NUM}"
     network_mode: "host"
-    working_dir: ${CATKIN_WS}/code/player
+    working_dir: ${CATKIN_WS}/dataset
     volumes:
       - ${CODE}:${CATKIN_WS}/code
       - "${DATASET}${AGENT_NUM}:${CATKIN_WS}/dataset"
