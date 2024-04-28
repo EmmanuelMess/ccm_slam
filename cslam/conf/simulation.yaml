@@ -6,35 +6,35 @@
 
 # Camera calibration and distortion parameters (OpenCV) 
 #+++++ Cam0 +++++
-Camera.fx: 612.6773071289062
-Camera.fy: 612.2407836914062
-Camera.cx: 321.3153076171875
-Camera.cy: 236.80836486816406
+Camera.fx: 610.522382
+Camera.fy: 610.608572
+Camera.cx: 324.270940
+Camera.cy: 233.573893
 
-Camera.k1: 0.0
-Camera.k2: 0.0
-Camera.p1: 0.0
-Camera.p2: 0.0
+Camera.k1: 0.135697
+Camera.k2: -0.282743
+Camera.p1: -0.002385
+Camera.p2: 0.001121
 
 # Camera frames per second 
-Camera.fps: 30.0
+Camera.fps: 60.0
 
 # Color order of the images (0: BGR, 1: RGB. It is ignored if images are grayscale)
 Camera.RGB: 1
 
 #T_SC
-Cam0.T00: 0.0148655429818
-Cam0.T01: -0.999880929698
-Cam0.T02: 0.00414029679422
-Cam0.T03: -0.0216401454975
-Cam0.T10: 0.999557249008
-Cam0.T11: 0.0149672133247
-Cam0.T12: 0.025715529948
-Cam0.T13: -0.064676986768
-Cam0.T20: -0.0257744366974
-Cam0.T21: 0.00375618835797
-Cam0.T22: 0.999660727178
-Cam0.T23: 0.00981073058949
+Cam0.T00: 1.0
+Cam0.T01: 0.0
+Cam0.T02: 0.0
+Cam0.T03: 0.0
+Cam0.T10: 0.0
+Cam0.T11: 1.0
+Cam0.T12: 0.0
+Cam0.T13: 0.0
+Cam0.T20: 0.0
+Cam0.T21: 0.0
+Cam0.T22: 1.0
+Cam0.T23: 0.0
 Cam0.T30: 0.0
 Cam0.T31: 0.0
 Cam0.T32: 0.0
